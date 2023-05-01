@@ -1,0 +1,25 @@
+version: "3.7"
+services:
+  php:
+    build:
+      dockerfile: ./config/Dockerfile
+      context: ./
+    restart: unless-stopped
+    environment:
+      HOST: sqlite
+      DATABASE_PORT: 3306
+      MYSQL_ROOT_USER: root
+      MYSQL_ROOT_PASSWORD: secret
+      SALT_PHRASE: defaultSaltShouldBeChanged
+      DEFAULT_USER: principle_user
+      APACHE_RUN_DIR: /var/run/apache2
+      APACHE_RUN_USER: www-data
+      APACHE_RUN_GROUP: www-data
+      APACHE_LOG_DIR: /var/log/apache2
+      APACHE_PID_FILE: /run/apache2/apache2.pid
+    volumes: 
+      - "./config/mysql-data:/var/lib/mysql"
+      - "./config/images:/var/www/html/images/studies"
+    container_name: edwards_iris
+    ports:
+      - "1086:80"

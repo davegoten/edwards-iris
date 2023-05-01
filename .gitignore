@@ -1,0 +1,14 @@
+.settings
+.buildpath
+.project
+.idea
+Thumbs.db
+*.DS_STORE
+**/structures/**
+**/colours/**
+reports
+app/inc/config.php
+config/mysql-data/*
+/vendor/
+!.blank
+!Blue-Iris.jpg

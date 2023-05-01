@@ -1,0 +1,19 @@
+{
+    "name": "davegoten/iris",
+    "description": "Containerized version of the Edwards Iris Categorization System for self hosted use",
+    "type": "project",
+    "authors": [
+        {
+            "name": "David Cha",
+            "email": "davegoten@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "EdwardsEyes\\": "app/"
+        }
+    },
+    "require": {
+        "php": "^8.0"
+    }
+}
