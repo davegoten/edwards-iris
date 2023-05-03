@@ -24,24 +24,7 @@ include_once SERVER_ROOT . '/inc/analytics.php';
                 </p>
                 <p>This web application was written to categorize iridial structure and gather colour data using user defined input on a large samples of irises.</p>
                 <p>It was designed for use with the paper <em>"Iris pigmentation as a quantitative trait: variation in populations of European, East Asian and South Asian ancestry and association with candidate gene polymorphisms"</em>.</p>
-<?php if (!stristr(ROOT_FOLDER, 'localhost')) { ?>
-                <p>To set up an account please <span id="contactToggle">contact me</span>.</p>
-                <form action="<?php echo ROOT_FOLDER;?>/js/process.php" id="contctme" class="clearfix" method="post">
-                    <input type="hidden" name="action" value="contact" />
-                    <label for="">Name: </label>
-                    <input type="text" name="name" id="name" placeholder="Name" />
-                    <label for="">Email: </label>
-                    <input type="email" name="email" id="email" placeholder="Email" />
-                    <label for="">Comments: </label>
-                    <textarea name="comment" id="comment" placeholder="Comments"></textarea>
-                    <input type="submit" name="submit" id="submit" value="Contact Me" />
-                </form>
-                <script>
-                $(document).ready(function () {
-                    $('#contactToggle').click(function () {$('#contctme').toggle()});
-                });
-                </script>
-<?php } ?>
+                <p>To set up an account please <a href="mailto:david@davidcha.com">contact me</span>.</p>
                 <div class="bottom">
                     <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
                         <input type="hidden" name="cmd" value="_s-xclick">
