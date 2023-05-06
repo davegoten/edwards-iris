@@ -17,6 +17,7 @@ services:
       APACHE_RUN_GROUP: www-data
       APACHE_LOG_DIR: /var/log/apache2
       APACHE_PID_FILE: /run/apache2/apache2.pid
+      MAINTENANCE_MODE: false
     volumes: 
       - "./config/mysql-data:/var/lib/mysql"
       - "./config/images:/var/www/html/images/studies"

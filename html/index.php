@@ -4,12 +4,18 @@ require_once dirname(__DIR__) . '/vendor/autoload.php';
 use EdwardsEyes\inc\required;
 $required = new required();
 $required->init();
-
-$destinationParts = pathinfo(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH));
-$destination = implode('/', array_filter([ltrim($destinationParts['dirname'], '/'), $destinationParts['filename']]));
 $addPath = function ($path) {
     return dirname(__DIR__) . "/app/{$path}.php";
 };
+
+
+if ((bool) getenv('MAINTENANCE_MODE') === true) {
+    include $addPath('maintenance');
+    return;
+}
+
+$destinationParts = pathinfo(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH));
+$destination = implode('/', array_filter([ltrim($destinationParts['dirname'], '/'), $destinationParts['filename']]));
 
 $existingFiles = [
     'admin/dashboard',
