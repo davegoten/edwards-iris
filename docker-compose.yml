@@ -19,6 +19,7 @@ services:
       APACHE_PID_FILE: /run/apache2/apache2.pid
       MAINTENANCE_MODE: false
     volumes: 
+      - ".:/var/www/"
       - "./config/mysql-data:/var/lib/mysql"
       - "./config/images:/var/www/html/images/studies"
     container_name: edwards_iris

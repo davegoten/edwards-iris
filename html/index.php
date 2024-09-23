@@ -9,7 +9,7 @@ $addPath = function ($path) {
 };
 
 
-if ((bool) getenv('MAINTENANCE_MODE') === true) {
+if (trim(strtolower(getenv('MAINTENANCE_MODE'))) === 'true') {
     include $addPath('maintenance');
     return;
 }

@@ -1,23 +1,32 @@
 # Edwards Iris Classification System (standalone version)
 
 ### Table of Contents
-* [Installation](#Installation)
-  * [Required programs](#Required-programs)
-  * [Downloading this code](#Downloading-this-code)
-  * [Docker Configuration & Customizations](#Docker-Configuration-&-Customizations)
-  * [Starting the server](#Starting-the-server)
-  * [Stopping the server](#Stopping-the-server)
-* [What's going on](#What's-going-on)
-  * [Virtual Machine Setup](#Virtual-Machine-Setup)
-  * [Volumes](#Volumes)
-* [Why is there a standalone version](#Why-is-there-a-standalone-version)
-  * [Privacy concerns](#Privacy-concerns)
-  * [Updates](#Updates)
-* [Troubleshooting](#Troubleshooting)
-  * [Quick Tips](#Quick-Tips)
-  * [Upload shortcuts](#Upload-shortcuts)
-  * [Reset everything](#Reset-everything)
+* [Important Security Notice](#important-security-notice)
+* [Installation](#installation)
+  * [Required programs](#required-programs)
+  * [Downloading this code](#downloading-this-code)
+  * [Docker Configuration & Customizations](#docker-configuration-&-customizations)
+  * [Starting the server](#starting-the-server)
+  * [Stopping the server](#stopping-the-server)
+* [What's going on](#what's-going-on)
+  * [Virtual Machine Setup](#virtual-machine-setup)
+  * [Volumes](#volumes)
+* [Why is there a standalone version](#why-is-there-a-standalone-version)
+  * [Privacy concerns](#privacy-concerns)
+  * [Updates](#updates)
+* [Troubleshooting](#troubleshooting)
+  * [Quick Tips](#quick-tips)
+  * [Upload shortcuts](#upload-shortcuts)
+  * [Reset everything](#reset-everything)
 
+
+### Important Security Notice
+This code is out of date and contains code that is quite old. It is likely to 
+contain some vulnerabilities. This appication should not be used hosted as is
+anywhere, though it should be fine for local use. It is largely for this reason
+that I've decided to stop hosting this code on a website and provided it as a 
+docker container instead. Specifcally this is reffering to the outdated version
+of jquery and three.js though there maybe others.
 
 ### Installation
 In order to run this program locally your system you can use a virtulized web 
@@ -55,14 +64,14 @@ github, copy the clone code and run that in the command line
 Windows (open command by pressing `Windows Key + R` and typing cmd):
 ```
 cd %USERPROFILE%\Desktop
-git clone https://github.com/copied/url iris
+git clone git@github.com:davegoten/edwards-iris.git iris
 ```
 Windows Powershell OR
 Mac (open terminal by pressing `command + spacebar` and typing 
 `terminal.app`):
 ```
 cd ~/Desktop
-git clone https://github.com/copied/url iris
+git clone git@github.com:davegoten/edwards-iris.git iris
 ```
 
 Otherwise you can use the download zip link in the same code button, and extract 

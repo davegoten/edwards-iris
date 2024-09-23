@@ -63,38 +63,8 @@ include_once SERVER_ROOT . '/inc/analytics.php';
                 <p>The plot points here wont tell you any participant inforamtion, but you can left click (or arrow keys) to rotate the entire graph, you can mouse wheel or page up and down to Zoom in. And finally you can right click and save the image when the angle is just right for your needs</p>
                 <p>Please note that the 3D graph make use of shaders to give it a more 3D look. The colours that are represented are not as accurate for that reason. But they are plotted relavtive to each other and the overall image should be relatively acceptable. Again here the actual image has been enlarged and shrunk down for your view and publicizing pleasure. The image you download will be somewhat larger again so you can put it into your favourite image post processor as needed.</p>
                 <h2>Donations</h2>
-                <p>Please note that this product is being given to you as-is with some support when I have free time. This webspace however costs me around $4-5 a month for a one year plan. Or around $50 a year according to the host, or $80 for 3 years. While this is not a lot of money, I hope that you'll enjoy using this tool enough that you'd consider donating to keep the page hosted for a while longer. The paypal link at the bottom right of some pages is there for just such an occasion. Of course it's not mandatory.</p>
+                <p>Please note that this product is being given to you as-is with some support when I have free time. I hope that you'll enjoy using this tool enough that you'd consider donating to keep the page hosted for a while longer. </p>
                 <p>The site was created for one purpose and one purpose alone, to categorize eye structre and colour for Melissa Edwards. But due to popular demand, and requests by the reviewers the tool was made public so that others may use it as well. I hope that it works for you as well as it has worked for us.</p>
-<?php if (!stristr(ROOT_FOLDER, 'localhost')) { ?>
-                <h2>Contact Me</h2>
-                <p>Please <span id="contactToggle">contact me</span> for help, or any of the above issues, I'll get back to you as soon as I can.</p>
-<?php include_once SERVER_ROOT . '/inc/messages.php';?>
-                <form action="<?php echo ROOT_FOLDER;?>/js/process.php" id="contctme" class="clearfix" method="post">
-                    <input type="hidden" name="action" value="contact" />
-                    <label for="">Name: </label>
-                    <input type="text" name="name" id="name" placeholder="Name" />
-                    <label for="">Email: </label>
-                    <input type="email" name="email" id="email" placeholder="Email" />
-                    <label for="">Comments: </label>
-                    <textarea name="comment" id="comment" placeholder="Comments"></textarea>
-                    <input type="submit" name="submit" id="submit" value="Contact Me" />
-                </form>
-                <script>
-                $(document).ready(function () {
-                    $('#contactToggle').click(function () {$('#contctme').toggle()});
-                });
-                </script>
-<?php }?>
-                <div class="spacer" />
-                <div class="bottom">
-                    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-                        <input type="hidden" name="cmd" value="_s-xclick">
-                        <input type="hidden" name="hosted_button_id" value="MTP4659ZJXWE4">
-                        <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
-                        <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
-                    </form>
-                    By David Cha
-                </div>
             </div>
         </div>
     </body>

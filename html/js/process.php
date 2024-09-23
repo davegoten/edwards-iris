@@ -9,7 +9,7 @@ use EdwardsEyes\inc\answerKey;
 
 $debug = true;
 $process = (!empty($_POST['action']))?strtolower($_POST['action']):null;
-if ($process == 'contact' || !empty($_POST['access']) && $_SESSION['sessionKey'] == $_POST['access']) {
+if (!empty($_POST['access']) && $_SESSION['sessionKey'] == $_POST['access']) {
     $connect = new database();
 
     switch ($process) {
@@ -325,38 +325,6 @@ if ($process == 'contact' || !empty($_POST['access']) && $_SESSION['sessionKey']
                 }
             }
             header('Location: ' . ROOT_FOLDER . '/admin/studies/run.php');
-            exit();
-            break;
-        case 'contact':
-            $error = false;
-            $to = 'davegoten@gmail.com';
-            $subject = 'Iris - contact ( '. date('F j Y') .' )';
-            $name = htmlspecialchars($_POST['name']);
-            $email = filter_var($_POST['email'], FILTER_VALIDATE_EMAIL);
-            $comment = htmlspecialchars($_POST['comment']);
-            if (empty($name)) {
-                $_SESSION['message'][] = 'Please avoid special characters in your name; or perhaps use an easy to pronounce nickname.';
-                $error = true;
-            }
-            if ($email === false) {
-                $_SESSION['message'][] = 'Please enter a valid email so I can get back to you.';
-                $error = true;
-            }
-            if (empty($comment)) {
-                $_SESSION['message'][] = 'Please avoid html tags and special characters in your comment; I read plain text just fine.';
-                $error = true;
-            }
-
-            if (!$error) {
-                $header = "From: davidcha@davidcha.ca\r\nReply-To: {$email}\r\nX-Mailer: PHP/" .phpversion();
-                $sent = mail($to, $subject, "{$name} <{$email}>\n\n" . $comment . "\n\nOn: " . date('F j Y H:i:s'), $header);
-                if ($sent === true) {
-                    $_SESSION['message'][] = 'Thank you, your email was successfully sent';
-                } else {
-                    $_SESSION['message'][] = 'Sorry, your email could not be sent';
-                }
-            }
-            header('Location: ' . ROOT_FOLDER);
             exit();
             break;
         default:
