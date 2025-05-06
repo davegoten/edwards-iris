@@ -1,10 +1,6 @@
 
 RewriteEngine on
 
-RewriteCond %{HTTP_HOST} ^iris\.davidcha\.com$ [OR]
-RewriteCond %{HTTP_HOST} ^www\.iris\.davidcha\.com$
-RewriteRule ^/?$ "http\:\/\/iris\.davidcha\.ca" [R=301,L]
-
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^ index.php [QSA,L]
